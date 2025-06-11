@@ -4,27 +4,37 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>OVERALL COMPETENCY VIEW</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
 
+   <!-- Font Awesome Free -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+ 
   <!-- Configure Tailwind to use Roboto -->
   <script>
-    tailwind.config = {
+      tailwind.config = {
       theme: {
         extend: {
           fontFamily: {
-            Roboto: ['Roboto'],
+            roboto: ['"Roboto Condensed"'],
           }
         }
       }
     }
   </script>
-  <script src="https://cdn.tailwindcss.com"></script>
+ <script src="https://cdn.tailwindcss.com"></script>
  <script src="https://unpkg.com/alpinejs" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
-<body class="bg-gray-100 text-gray-800 font-Roboto">
-font-family: 'Roboto', sans-serif;  <!-- Header -->
+<body class="bg-gray-100 text-gray-800 font-roboto">
+  <!-- Header -->
  <header class="bg-white shadow flex justify-between items-center px-6 py-4 fixed top-0 left-0 right-0 z-50">
 
     <div class="flex items-center space-x-4">
@@ -137,7 +147,7 @@ font-family: 'Roboto', sans-serif;  <!-- Header -->
     <div x-data="{ openIndex: null }">
       <!-- Accordion Items Start -->
       <template x-for="(item, index) in [
-        {
+        {logo: './images/business.png',
           title: 'Business & Financial Acumen',
           score: '1.67/3',
           narrative: `John demonstrates exceptional strategic thinking abilities. He consistently analyzes market trends and develops innovative approaches to address business challenges. His forward-thinking mindset has contributed significantly to the team's success in launching new initiatives.`,
@@ -147,7 +157,7 @@ font-family: 'Roboto', sans-serif;  <!-- Header -->
             { title: 'Financial Acumen', score: '1.5/3', self: '2/3', manager: '1/3', selfWidth: '40%', managerWidth: '33%' }
           ]
         },
-        {
+        {logo: './images/Analysis.png',
           title: 'Analysis to Insights',
           score: '1.67/3',
           narrative: `John motivates team members to perform at their best by fostering a collaborative environment. His leadership style inspires trust and encourages personal growth.`,
@@ -157,7 +167,7 @@ font-family: 'Roboto', sans-serif;  <!-- Header -->
             { title: 'Data-Informed Decision Making', score: '2/3', self: '3/3', manager: '1/3', selfWidth: '100%', managerWidth: '33%' }
           ]
         },
-        {
+        {logo: './images/Brandport.png',
           title: 'Brand & Portfolio Value',
           score: '2.17/3',
           narrative: `John communicates ideas clearly and effectively across different mediums. His active listening skills and feedback style make collaboration smooth and productive.`,
@@ -167,7 +177,7 @@ font-family: 'Roboto', sans-serif;  <!-- Header -->
             { title: 'Lifecycle Optimization', score: '2.5/3', self: '2/3', manager: '2/3', selfWidth: '66%', managerWidth: '66%' }
           ]
         },
-        {
+        {logo: './images/stakeholder.png',
           title: 'Stakeholder Alignment',
           score: '2.3/3',
           narrative: `John approaches decisions methodically and considers multiple perspectives. He balances data with intuition effectively.`,
@@ -177,7 +187,7 @@ font-family: 'Roboto', sans-serif;  <!-- Header -->
             { title: 'Agency Collaboration', score: '2/3', self: '2/3', manager: '2/3', selfWidth: '66%', managerWidth: '66%' }
           ]
         },
-        {
+        {logo: './images/story.png',
           title: 'Effective Storytelling',
           score: '1.67/3',
           narrative: `John demonstrates creativity and a willingness to explore new solutions. He regularly proposes fresh ideas and encourages innovation within the team.`,
@@ -187,7 +197,7 @@ font-family: 'Roboto', sans-serif;  <!-- Header -->
             { title: 'Driving Impact', score: '1.5/3', self: '2/3', manager: '1/3', selfWidth: '66%', managerWidth: '33%' }
           ]
         },
-        {
+        {logo: './images/market.png',
           title: 'Market Access',
           score: '2/3',
           narrative: `John quickly adjusts to changing priorities and environments. He maintains performance and composure under pressure.`,
@@ -197,7 +207,7 @@ font-family: 'Roboto', sans-serif;  <!-- Header -->
             { title: 'Marketing and Access Integration', score: '2.5/3', self: '3/3', manager: '2/3', selfWidth: '100%', managerWidth: '66%' }
           ]
         },
-          {
+          {logo: './images/Personal.png',
           title: 'Personalized Marketing',
           score: '1.83/3',
           narrative: `John quickly adjusts to changing priorities and environments. He maintains performance and composure under pressure.`,
@@ -210,17 +220,22 @@ font-family: 'Roboto', sans-serif;  <!-- Header -->
       ]" :key="index">
         <div class="bg-white rounded-lg shadow-sm mb-4 border">
           <button
-            class="w-full flex justify-between items-center p-4"
-            @click="openIndex === index ? openIndex = null : openIndex = index">
-            <div class="flex items-center space-x-4">
-              <div class="text-blue-600 text-2xl">♟️</div>
-              <div>
-                <h3 class="text-lg font-semibold text-gray-800" x-text="item.title"></h3>
-                <p class="text-sm text-gray-500 text-left">Overall Score: <span x-text="item.score"></span></p>
-              </div>
-            </div>
-            <div class="text-gray-400 text-xl" x-text="openIndex === index ? '▲' : '▼'"></div>
-          </button>
+  class="w-full flex justify-between items-center p-4"
+  @click="openIndex === index ? openIndex = null : openIndex = index"
+>
+  <div class="flex items-center space-x-4">
+    <!-- Dynamic logo binding with Alpine.js -->
+    <img :src="item.logo" :alt="item.title + ' logo'" class="w-[60px] h-[60px] object-contain me-[10px]" />
+    <div>
+      <h3 class="text-lg font-semibold text-gray-800" x-text="item.title"></h3>
+      <p class="text-sm text-gray-500 text-left">
+        Overall Score: <span x-text="item.score"></span>
+      </p>
+    </div>
+  </div>
+  <div class="text-gray-400 text-xl" x-text="openIndex === index ? '▲' : '▼'"></div>
+</button>
+
 
           <div x-show="openIndex === index" x-transition class="p-6 border-t bg-gray-50">
             <h4 class="font-semibold text-gray-700 mb-2">Competency Narrative</h4>
