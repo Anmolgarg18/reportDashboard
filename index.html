@@ -38,12 +38,12 @@
  <header class="bg-white shadow flex justify-between items-center px-6 py-4 fixed top-0 left-0 right-0 z-50">
 
     <div class="flex items-center space-x-4">
-      <img src="logo.png" alt="Logo" class="h-8 w-auto object-contain" />
+      <img src="logo.png" alt="Logo" class="h-5 w-auto object-contain" />
       <h1 class="text-xl font-bold">Assess.AI</h1>
     </div>
     <div class="space-x-2">
       <button onclick="downloadPDF()" class="border px-4 py-2 text-sm rounded hover:bg-gray-100">Download as PDF</button>
-      <button class="bg-blue-600 text-white px-4 py-2 text-sm rounded hover:bg-blue-700 disabled">Share Report</button>
+      <button class="bg-[#071D49] text-white px-4 py-2 text-sm rounded hover:bg-blue-700 disabled">Share Report</button>
     </div>
   </header>
 
@@ -52,31 +52,32 @@
 
    <!-- Heading -->
 <div class="flex flex-col md:flex-row md:items-center justify-between mb-8">
-  <h2 class=" mb-4 md:mb-0 text-xl">
-    <span class="text-2xl font-bold text-[#0066F5]">Hey Anmol,</span> <br> Here is your personalized report. Toggle between Competency View and Detailed View to dive deeper.
+  <h2 class=" mb-4 md:mb-0 text-sm">
+    <span class="text-2xl font-bold text-[#0066F5]">Hey Anmol,</span> <br> Here is your personalized report. Toggle between <span class="font-bold text-[#071D49]">"Competency View and Detailed View"</span>  to dive deeper.
   </h2>
 
   <!-- Toggle -->
-  <div class="relative flex bg-gray-200 rounded-full p-1 w-max shadow min-w-[360px] h-[40px]">
+<div class="relative flex bg-gray-200 rounded-full p-1 mx-auto shadow w-[220px] h-[36px]">
 
-    <!-- Sliding background -->
-    <div id="view-slider" class="absolute top-1 left-1 bg-white rounded-full shadow transition-all duration-300 h-[33px] w-1/2"></div>
+  <!-- Sliding background -->
+  <div id="view-slider" class="absolute top-1 left-1 bg-white rounded-full shadow transition-all duration-300 h-[28px] w-1/2"></div>
 
-    <!-- Buttons -->
-    <button id="CompetencyBtn" onclick="switchView('competency')" class="relative flex flex-1 px-6 py-3 text-sm justify-center items-center rounded-full text-black font-semibold z-10">
-      Competency View
-    </button>
-    <button id="DetailedBtn" onclick="switchView('detailed')" class="relative flex flex-1 px-6 py-3 text-sm justify-center items-center rounded-full text-black font-semibold z-10">
-      Detailed View
-    </button>
-  </div>
+  <!-- Buttons -->
+  <button id="CompetencyBtn" onclick="switchView('competency')" class="relative flex flex-1 px-2 py-1 text-xs justify-center items-center rounded-full text-black font-semibold z-10">
+    Competency View
+  </button>
+  <button id="DetailedBtn" onclick="switchView('detailed')" class="relative flex flex-1 px-2 py-1 text-xs justify-center items-center rounded-full text-black font-semibold z-10">
+    Detail View
+  </button>
+</div>
+
 </div>
  <div id="competency-view">
-    <div class="flex flex-col md:flex-row gap-6">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
       <!-- Skills Assessment -->
-      <div class="bg-white p-6 rounded-lg shadow-md md:w-1/2 w-full">
+      <div class="bg-white p-6 rounded-lg shadow-md md:col-span-8 col-span-12">
         <div class="flex justify-between items-center mb-2 flex-wrap gap-2">
-          <h3 class="text-lg font-semibold">OVERALL COMPETENCY VIEW</h3>
+          <h3 class="text-2xl text-[#071D49]  font-bold">OVERALL COMPETENCY VIEW</h3>
           <div class="relative flex bg-gray-200 rounded-full p-1 w-max">
             <div id="slider" class="absolute top-1 left-1 bg-white rounded-full shadow transition-all duration-300 h-[32px]"></div>
             <button id="barBtn" onclick="switchChart('bar')" class="relative px-4 py-1 text-sm rounded-full text-black font-medium z-10">Bar Chart</button>
@@ -84,7 +85,7 @@
           </div>
         </div>
 
-        <div id="legends" class="flex items-center justify-end space-x-4 mb-4" >
+        <div id="legends" class="flex items-center justify-end space-x-4 mt-[30px] mb-2" >
           <span class="text-[#8A2ECC] text-sm">● Self</span>
           <span class="text-[#338700] text-sm">● Manager</span>
           <span class="text-[#0066F5] text-sm">● Benchmark</span>
@@ -100,8 +101,8 @@
       </div>
 
       <!-- Performance Summary -->
-      <div class="bg-white p-6 rounded-lg shadow-md md:w-1/2 w-full">
-        <h3 class="text-lg font-semibold mb-4">PERFORMANCE SUMMARY</h3>
+      <div class="bg-white p-6 rounded-lg shadow-md md:col-span-4 col-span-12">
+        <h3 class="text-2xl text-[#071D49] font-bold mb-4 text-center">Overall SUMMARY</h3>
         <p class="text-sm text-gray-700 mb-2">
           The assessment reveals strong capabilities in Brand & Portfolio Value, where the individual demonstrates near-mastery level competence. There is good alignment between self-perception and manager evaluation in most areas, particularly in Strategic Planning where both ratings show advanced proficiency.
         </p>
@@ -112,8 +113,8 @@
           In Innovation & Adaptability, the manager's assessment exceeds self-perception. Overall, the competency profile indicates a professional with strong technical and strategic skills who would benefit from enhancing communication and analytical capabilities.
         </p>
         <p class="text-sm text-gray-700 mb-2">The individual demonstrates exceptional capability in Brand & Portfolio Value, showcasing a deep understanding of brand strategy, equity management, and portfolio optimization. Their ability to assess market dynamics, prioritize brand initiatives, and make strategic trade-offs contributes significantly to value creation.</p>
-     <p class="text-sm text-gray-700 mb-2">Strategic Planning is a core strength for the individual, as evidenced by both self and manager ratings indicating advanced proficiency. They excel in connecting insights to long-term goals, setting priorities, and aligning plans with business objectives. Their structured thinking and ability to anticipate future trends support effective decision-making and resource allocation.</p>
-    <p class="text-sm text-gray-700 ">In Stakeholder Alignment, the individual displays solid foundational skills, effectively engaging with key partners and demonstrating an awareness of differing perspectives. They are capable of building rapport, facilitating constructive dialogue, and aligning on shared objectives.While already effective in managing stakeholder dynamics, there is clear potential to further elevate this competency through continued focus on influence, cross-functional collaboration, and proactive relationship management.</p> 
+     <p class="text-sm text-gray-700 mb-2">Strategic Planning is a core strength for the individual, as evidenced by both self and manager ratings indicating advanced proficiency. They excel in connecting insights to long-term goals, setting priorities, and aligning plans with business objectives.</p>
+    
     </div>
     </div>
 
@@ -121,7 +122,7 @@
     <div class="flex flex-col md:flex-row items-start gap-6 mt-6">
       <div class="bg-white p-6 rounded-lg shadow-md w-full md:w-1/2">
         <button id="accordion-toggle-strengths" class="w-full flex justify-between items-center text-lg font-semibold text-left focus:outline-none" onclick="toggleAccordion('strengths')">
-          <span>TOP STRENGTHS</span>
+          <span class="text-2xl text-[#071D49] font-bold">TOP STRENGTHS</span>
           <svg id="accordion-arrow-strengths" class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
           </svg>
@@ -131,7 +132,7 @@
 
       <div class="bg-white p-6 rounded-lg shadow-md w-full md:w-1/2">
         <button id="accordion-toggle-development" class="w-full flex justify-between items-center text-lg font-semibold text-left focus:outline-none" onclick="toggleAccordion('development')">
-          <span>DEVELOPMENT PRIORITIES</span>
+          <span class="text-[#071D49] text-2xl font-bold">DEVELOPMENT PRIORITIES</span>
           <svg id="accordion-arrow-development" class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
           </svg>
@@ -142,7 +143,7 @@
     </div>
     <div id="detailed-view" class="hidden"> 
      <div class="max-w-full mx-auto">
-    <h2 class="text-2xl font-bold mb-6">Detailed Competency Overview</h2>
+    <h2 class="text-2xl text-[#071D49] font-bold mb-6">Detailed Competency Overview</h2>
 
     <div x-data="{ openIndex: null }">
       <!-- Accordion Items Start -->
@@ -344,7 +345,7 @@
     function renderSkills() {
       const container = document.getElementById("skills-container");
       const scaleRow = document.createElement("div");
-      scaleRow.className = "grid grid-cols-6 gap-4 mb-4 text-xs text-gray-500 px-1";
+      scaleRow.className = "grid grid-cols-6 gap-4 mb-4 text-xs text-gray-500 px-1 mt-[50px]";
       scaleRow.innerHTML = `<div class="col-span-2"></div><div class="col-span-4 relative h-5">
         <div class="absolute top-0 left-0 w-full flex justify-between text-center text-xs text-gray-500">
           <div class="w-1/3">Foundational</div>
@@ -362,13 +363,13 @@
         const row = document.createElement("div");
         row.className = "grid grid-cols-6 gap-4 items-center mb-4";
         const label = document.createElement("div");
-        label.className = "col-span-2 font-medium border rounded-lg px-1 py-2";
+        label.className = "col-span-2 font-medium border border-[#071D49] rounded-lg px-1 py-2";
         label.textContent = skill.label;
         const graph = document.createElement("div");
         graph.className = "col-span-4 relative h-3 bg-gray-200 rounded before:content-[''] before:absolute before:top-1/2 before:left-0 before:right-0 before:border-t before:border-dotted before:border-gray-400 before:-z-0";
-        graph.innerHTML = `<div class="absolute top-1/2 -translate-y-1/2 w-3 h-3 bg-[#8A2ECC] rounded-full" style="left: ${getPosition(skill.self)};"></div>
-          <div class="absolute top-1/2 -translate-y-1/2 w-3 h-3 bg-[#338700] rounded-full" style="left: ${getPosition(skill.manager)};"> </div>
-          <div class="absolute top-1/2 -translate-y-1/2 w-3 h-3 bg-[#0066F5] rounded-full" style="left: ${getPosition(skill.benchmark)};"></div>`;
+        graph.innerHTML = `<div class="absolute top-1/2 -translate-y-1/2 w-5 h-5 bg-[#8A2ECC] rounded-full" style="left: ${getPosition(skill.self)};"></div>
+          <div class="absolute top-1/2 -translate-y-1/2 w-5 h-5 bg-[#338700] rounded-full" style="left: ${getPosition(skill.manager)};"> </div>
+          <div class="absolute top-1/2 -translate-y-1/2 w-5 h-5 bg-[#0066F5] rounded-full" style="left: ${getPosition(skill.benchmark)};"></div>`;
         row.appendChild(label);
         row.appendChild(graph);
         container.appendChild(row);
@@ -397,8 +398,8 @@
       const container = document.getElementById(containerId);
       data.forEach(item => {
         const div = document.createElement("div");
-        div.className = "bg-blue-50 border-l-4 border-blue-600 p-4 rounded relative";
-        div.innerHTML = `<div class="flex justify-between items-center mb-1"><span class="font-medium text-blue-700">${item.title}</span></div>
+        div.className = "bg-blue-50 border-l-4 border-[#071D49] p-4 rounded relative";
+        div.innerHTML = `<div class="flex justify-between items-center mb-1"><span class="font-medium text-[#071D49]">${item.title}</span></div>
           <p class="text-sm text-gray-700">${item.description}</p>`;
         container.appendChild(div);
       });
