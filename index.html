@@ -57,10 +57,10 @@
   </h2>
 
   <!-- Toggle -->
-<div class="relative flex bg-gray-200 rounded-full p-1 mx-auto shadow w-[250px] h-[36px]">
+<div class="relative flex bg-gray-200 rounded-full p-1  shadow w-[250px] h-[40px]">
 
   <!-- Sliding background -->
-  <div id="view-slider" class="absolute top-1 left-1 bg-white rounded-full shadow transition-all duration-300 h-[28px] w-1/2"></div>
+  <div id="view-slider" class="absolute top-1 left-1 bg-white rounded-full shadow transition-all duration-300 h-[33px] w-1/2"></div>
 
   <!-- Buttons -->
   <button id="CompetencyBtn" onclick="switchView('competency')" class="relative flex flex-1 px-2 py-1 text-xs justify-center items-center rounded-full text-black font-semibold z-10">
@@ -88,7 +88,7 @@
         <div id="legends" class="flex items-center justify-end space-x-4 mt-[30px] mb-2" >
           <span class="text-[#8A2ECC] text-sm">● Self</span>
           <span class="text-[#071D49] text-sm">● Manager</span>
-          <span class="text-[#0066F5] text-sm">● Benchmark</span>
+          <span class="text-[#0066F5] text-sm">● Role Benchmark</span>
         </div>
 
         <!-- Chart Containers -->
@@ -102,7 +102,7 @@
 
       <!-- Performance Summary -->
       <div class="bg-white p-6 rounded-lg shadow-md md:col-span-4 col-span-12">
-        <h3 class="text-2xl text-[#071D49] font-bold mb-4 text-center">Overall SUMMARY</h3>
+        <h3 class="text-2xl text-[#071D49] font-bold mb-4 text-left">OVERALL SUMMARY</h3>
         <p class="text-sm text-gray-700 mb-2">
           You are demonstrating a strong command of marketing competencies and are operating predominantly at a Mastery level across key dimensions. This indicates not only your ability to apply advanced marketing practices consistently, but also your capacity to guide others, influence broader strategic decisions, and contribute meaningfully to AbbVie’s business goals.
         </p>
@@ -312,26 +312,26 @@
     }
 
     const skillsData = [
-      { label: "Business & Financial Acumen", self: 2.33, manager: 1, benchmark: 2 },
-      { label: "Analysis to Insights", self: 2.33, manager: 1, benchmark: 2 },
-      { label: "Brand & Portfolio Value", self: 1.67, manager: 2.67, benchmark: 3 },
-      { label: "Stakeholder Alignment", self: 2, manager: 2.67, benchmark: 2 },
-      { label: "Effective Storytelling", self: 1.33, manager: 2, benchmark: 3 },
-      { label: "Market Access", self: 2.33, manager: 1.33, benchmark: 2 },
-      { label: "Personalized Marketing", self: 2.33, manager: 1.33, benchmark: 3 },
+      { label: "BUSINESS & FINANCIAL ACUMEN", self: 2.33, manager: 1, benchmark: 2 },
+      { label: "ANALYSIS TO INSIGHTS", self: 2.33, manager: 1, benchmark: 2 },
+      { label: "BRAND & PORTFOLIO VALUE", self: 1.67, manager: 2.67, benchmark: 3 },
+      { label: "STAKEHOLDER ALIGNMENT", self: 2, manager: 2.67, benchmark: 2 },
+      { label: "EFFECTIVE STORYTELLING", self: 1.33, manager: 2, benchmark: 3 },
+      { label: "MARKET ACCESS", self: 2.33, manager: 1.33, benchmark: 2 },
+      { label: "PERSONALIZED MARKETING", self: 2.33, manager: 1.33, benchmark: 3 },
     ];
 
     const strengths = [
-      { title: "Stakeholder Alignment", description: "Building strong relationships with internal stakeholders and external partners to exceed shared goals" },
-      { title: "Brand & Portfolio Value", description: "Maximizing brand potential through market and customer insight — shaping compelling stories with strategic direction." },
-      { title: "Market Access", description: "Understanding market access key stakeholders' economics and decision making to enable patient access" },
+      { title: "Stakeholder Alignment", description: "You demonstrate strong cross-functional collaboration, aligning internal teams and agency partners to deliver seamless execution. Your ability to anticipate stakeholder needs and foster partnerships contributes significantly to strategic clarity and impact." },
+      { title: "Brand & Portfolio Value", description: "You create compelling brand strategies grounded in market insight and customer understanding, ensuring alignment from strategy to execution. Your work strengthens brand positioning and enables competitive differentiation and growth" },
+      { title: "Market Access", description: "You effectively integrate access considerations into brand planning, tailoring value communication to key stakeholders. Your ability to align pricing, reimbursement strategy, and market dynamics supports patient access and enhances overall brand success." },
      
     ];
 
     const development = [
-      { title: "Effective Storytelling", description: "Inspiring action through compelling narratives that effectively convey value for key stakeholders, including customers, peers and leaders" },
-      { title: "Analysis to Insights", description: "Gathering, analyzing and synthesizing data to generate impactful insights that drive action, deepen patient and customer understanding and fuel curiosit" },
-       { title: "Business & Financial Acumen", description: "Understanding the key forces and dynamics inside and outside AbbVie that consistently guide all strategic decisions." }
+      { title: "Effective Storytelling", description: "Focus on elevating your narratives by linking data to stakeholder-specific messages that inspire action. Strengthening message clarity, emotional connection, and delivery across formats will enhance your overall communication impact." },
+      { title: "Analysis to Insights", description: "Continue building deeper analytical capabilities by refining data interpretation and synthesizing insights that drive clear decision-making. Strengthening your use of advanced analytics and visualization will increase strategic influence." },
+       { title: "Business & Financial Acumen", description: "Enhance your understanding of AbbVie’s financial drivers and decision-making frameworks to better align marketing strategies with business outcomes. Developing confidence in forecasting, investment trade-offs, and compliance will broaden your strategic contribution." }
     ];
 
     const getPosition = (value) => {
@@ -363,7 +363,7 @@
         const row = document.createElement("div");
         row.className = "grid grid-cols-6 gap-4 items-center mb-4";
         const label = document.createElement("div");
-        label.className = "col-span-2 font-medium border border-[#071D49] rounded-lg px-1 py-2";
+        label.className = "col-span-2 font-medium border border-[#EAE4D5] text-[#948979] text-center rounded-lg px-1 py-2";
         label.textContent = skill.label;
         const graph = document.createElement("div");
         graph.className = "col-span-4 relative h-3 bg-gray-200 rounded before:content-[''] before:absolute before:top-1/2 before:left-0 before:right-0 before:border-t before:border-dotted before:border-gray-400 before:-z-0";
@@ -388,7 +388,7 @@
         data: { labels, datasets: [
           { label: 'Self', data: selfData, borderColor: '#8A2ECC', backgroundColor: 'rgba(138, 46, 204, 0.2)', pointBackgroundColor: '#8A2ECC' },
           { label: 'Manager', data: managerData, borderColor: '#071D49', backgroundColor: 'rgba(7, 29, 73, 0.2)', pointBackgroundColor: '#338700' },
-          { label: 'Benchmark', data: benchmarkData, borderColor: '#0066F5', backgroundColor: 'rgba(0, 102, 245, 0.2)', pointBackgroundColor: '#0066F5' }
+          { label: 'Role Benchmark', data: benchmarkData, borderColor: '#0066F5', backgroundColor: 'rgba(0, 102, 245, 0.2)', pointBackgroundColor: '#0066F5' }
         ]},
         options: { responsive: true, maintainAspectRatio: false, scales: { r: { min: 0, max: 4, ticks: { stepSize: 1 } } } }
       });
