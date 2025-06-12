@@ -88,7 +88,7 @@
         <div id="legends" class="flex items-center justify-end space-x-4 mt-[30px] mb-2" >
           <span class="text-[#8A2ECC] text-sm">● Self</span>
           <span class="text-[#071D49] text-sm">● Manager</span>
-          <span class="text-[#0066F5] text-sm">● Role Benchmark</span>
+          <span class="text-[#0066F5] text-sm"><span class="inline-block w-2.5 h-1.5 bg-[#0066F5] mr-1.5 rotate-90"></span> Role Benchmark</span>
         </div>
 
         <!-- Chart Containers -->
@@ -318,13 +318,13 @@
     }
 
     const skillsData = [
-      { label: "BUSINESS & FINANCIAL ACUMEN", self: 2.33, manager: 1, benchmark: 2 },
-      { label: "ANALYSIS TO INSIGHTS", self: 2.33, manager: 1, benchmark: 2 },
-      { label: "BRAND & PORTFOLIO VALUE", self: 1.67, manager: 2.67, benchmark: 3 },
-      { label: "STAKEHOLDER ALIGNMENT", self: 2, manager: 2.67, benchmark: 2 },
-      { label: "EFFECTIVE STORYTELLING", self: 1.33, manager: 2, benchmark: 3 },
-      { label: "MARKET ACCESS", self: 2.33, manager: 1.33, benchmark: 2 },
-      { label: "PERSONALIZED MARKETING", self: 2.33, manager: 1.33, benchmark: 3 },
+      { label: "BUSINESS & FINANCIAL ACUMEN", self: 1.33, manager: 1, benchmark: 2 },
+      { label: "ANALYSIS TO INSIGHTS", self: 1.33, manager: 1, benchmark: 2},
+      { label: "BRAND & PORTFOLIO VALUE", self: 1.67, manager: 1.6, benchmark: 2.5 },
+      { label: "STAKEHOLDER ALIGNMENT", self: 1.5, manager: 1.7, benchmark: 2 },
+      { label: "EFFECTIVE STORYTELLING", self: 1.53, manager: 1.8, benchmark: 2.5 },
+      { label: "MARKET ACCESS", self: 1, manager: 1.33, benchmark: 2 },
+      { label: "PERSONALIZED MARKETING", self: 1.4, manager: 1.5, benchmark: 2.5 },
     ];
 
     const strengths = [
@@ -375,7 +375,7 @@
         graph.className = "col-span-4 relative h-3 bg-gray-200 rounded before:content-[''] before:absolute before:top-1/2 before:left-0 before:right-0 before:border-t before:border-dotted before:border-gray-400 before:-z-0";
         graph.innerHTML = `<div class="absolute top-1/2 -translate-y-1/2 w-5 h-5 bg-[#8A2ECC] rounded-full" style="left: ${getPosition(skill.self)};"></div>
           <div class="absolute top-1/2 -translate-y-1/2 w-5 h-5 bg-[#071D49] rounded-full" style="left: ${getPosition(skill.manager)};"> </div>
-          <div class="absolute top-1/2 -translate-y-1/2 w-5 h-5 bg-[#0066F5] rounded-full" style="left: ${getPosition(skill.benchmark)};"></div>`;
+          <div class="absolute top-1/2 -translate-y-1/2 w-2 h-6 bg-[#0066F5]" style="left: ${getPosition(skill.benchmark)};"></div>`;
         row.appendChild(label);
         row.appendChild(graph);
         container.appendChild(row);
