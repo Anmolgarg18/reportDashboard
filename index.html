@@ -484,11 +484,11 @@
       const verticalLines = document.createElement("div");
       verticalLines.className = "absolute top-0 left-0 w-full h-full pointer-events-none";
       
-      verticalLines.innerHTML = `<div class="absolute bottom-[8px] left-[34%] transform -translate-x-1/2 text-gray-600 text-sm">0</div>
+      verticalLines.innerHTML = `
       <div class="absolute top-[-20px] bottom-[27.4px] w-px border-l border-dotted border-gray-400" style="left: 55%;">
-         <div class="absolute bottom-[-20px] left-1/2 transform -translate-x-1/2 text-gray-600 text-sm">1</div></div>
-        <div class="absolute top-[-20px] bottom-[27.4px] w-px border-l border-dotted border-gray-400" style="left: 76%;"> <div class="absolute bottom-[-20px] left-1/2 transform -translate-x-1/2 text-gray-600 text-sm">2</div></div>  
-        <div class="absolute bottom-[8px] left-[100%] transform -translate-x-1/2 text-gray-600 text-sm">3</div>`;
+         </div>
+        <div class="absolute top-[-20px] bottom-[27.4px] w-px border-l border-dotted border-gray-400" style="left: 76%;"> </div>  
+       `;
       container.appendChild(verticalLines);
 
       skillsData.forEach(skill => {
