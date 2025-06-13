@@ -396,7 +396,22 @@
           { label: 'Manager', data: managerData, borderColor: '#071D49', backgroundColor: 'rgba(7, 29, 73, 0.2)', pointBackgroundColor: '#338700' },
           { label: 'Role Benchmark', data: benchmarkData, borderColor: '#0066F5', backgroundColor: 'rgba(0, 102, 245, 0.2)', pointBackgroundColor: '#0066F5' }
         ]},
-        options: { responsive: true, maintainAspectRatio: false, scales: { r: { min: 0, max: 4, ticks: { stepSize: 1 } } } }
+       options: {
+  responsive: true,
+  maintainAspectRatio: false,
+  scales: {
+    r: {
+      min: 0,
+      max: 4,
+      ticks: { stepSize: 1 }
+    }
+  },
+  plugins: {
+    legend: {
+      position: 'bottom'  // <--- Moves legend to the bottom
+    }
+  }
+}
       });
     }
 
